@@ -1,5 +1,8 @@
 use("platzi_store")
 
+//podemos eliminar un documento con deleteOne o deleteMany
 // db.products.deleteOne({ _id: 1 })
+
+
 // db.products.deleteMany({ price: 100 })
 db.products.drop()

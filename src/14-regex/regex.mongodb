@@ -1,7 +1,18 @@
 use("platzi_store")
 
-// db.inventory.find({ "item.description": "Single line description." })
-// db.inventory.find({ "item.description": { $regex: /line/ } })
+//el comando regex se usa para hacer busquedas de texto dentro de 
+//documentos de la base de datos
+
+
+//db.inventory.find({ "item.description": "Single line description." })
+
+//dentro del los // se pone la palabra que se quiere buscar
+// la i es para que no sea case sensitive, es decir que no importa si es mayuscula o minuscula
+//la $ es para que busque la palabra al final de la cadena
+// el ^ es para que busque la palabra al inicio de la cadena
+//m es para que busque palabras que tengan salto de linea
+
+//db.inventory.find({ "item.description": { $regex: /line/ } })
 // db.inventory.find({ "item.description": { $regex: /LINE/i } })
 // db.inventory.find({ "item.description": { $regex: /line$/i } })
 // db.inventory.find({ "item.description": { $regex: /^single/i } })

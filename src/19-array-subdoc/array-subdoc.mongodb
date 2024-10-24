@@ -1,5 +1,9 @@
 use("sample_training")
 
+
+//podemos realizar consultas anidadas con subdocumentos
+//para eso podemos usar el punto para acceder a los campos de los subdocumentos 
+
 // db.trips.find({"start station location.type": "Point" })
 
 // db.companies.find({
@@ -9,6 +13,8 @@ use("sample_training")
 //   relationships: 1
 // }).count() // 108
 
+
+//elementMatch nos permite hacer consultas en los subdocumentos de un array 
 db.companies.find({
   relationships: {
     $elemMatch: {

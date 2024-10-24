@@ -1,0 +1,8 @@
+use("sample_training")
+
+// 1 = 0 - 10, A-Z
+// -1 = 10 - 0, Z-A
+db.zips //similar a select * from zips
+  .find({ pop: { $gte: 100 } }) //similar a where en SQL
+  .sort({ pop: -1 }) //similar a order by en SQL
+  .limit(2) //similar a limit en SQL 

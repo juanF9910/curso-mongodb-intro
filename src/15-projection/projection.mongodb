@@ -1,8 +1,18 @@
 use("sample_training")
 
+//vamos a buscar todos los documentos de la colección trips
+// tal que el campo tripduration sea mayor o igual a 500
+// y solo vamos a mostrar los campos tripduration y usertype
+//a esto se le llama proyección: mostrar solo los campos que necesitamos
+
 db.trips.find(
   // query
   { tripduration: { $gte: 500 } },
   // projection
   { tripduration: 1, usertype: 1 }
 )
+ 
+
+//el id siempre se llama _id y se muestra por defecto
+// a menos que se indique lo contrario en la proyección
+// con el valor 0 _id: 0

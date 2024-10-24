@@ -9,11 +9,11 @@ use("sample_training")
 //   ]
 // }).count()
 
-// $and [{}, {}, {}]
+// $and [{}, {}, {}], consultas anidadas con and y or 
 db.routes.find({
   $and: [
     { airplane: "E70" },
-    {
+    { //esto se puede considerar como una subconsulta
       $or: [
         { dst_airport: "BOG" },
         { src_airport: "BOG" },

@@ -1,5 +1,8 @@
 use("sample_airbnb")
 
+//el agregation framework es una forma de hacer consultas mas complejas
+//en donde podemos hacer operaciones de agrupacion, proyeccion, etc en una sola consulta 
+
 // db.listingsAndReviews.find({
 //   amenities: "Wifi"
 // }, {
@@ -7,9 +10,15 @@ use("sample_airbnb")
 //   amenities: 1
 // })
 
+
+//el comando agggregate nos permite hacer consultas mas complejas
+//en donde podemos hacer operaciones de agrupacion, proyeccion, etc en una sola consulta
+//su estructura es un arreglo de objetos/documentos en donde cada objeto es una operacion que se va a realizar en la consulta 
 // [], [], []
-db.listingsAndReviews.aggregate([
+db.listingsAndReviews.aggregate([ //pipeline
   { $match: { amenities: "Wifi" } }, // find
   { $project: { address: 1 } }, // project
-  { $group: { _id: "$address.country", count: { $sum: 1 } } }
+  { $group: { _id: "$address.country", count: { $sum: 1 } } } // group by 
+  //establecemos que el id de la agrupacion sea el pais y que cuente cuantos documentos hay en cada pais 
 ])
+ 

@@ -1,29 +1,29 @@
 use("platzi_store")
 
-// $in , values & arrays
-// db.inventory.find({ qty: { $in: [20, 25]} })
-// db.inventory.find({ tags: { $in: ["book", "electronics"]} })
+// $in , works for values & arrays
+//db.inventory.find({ qty: { $in: [20, 25]} })
+//db.inventory.find({ tags: { $in: ["book", "electronics"]} })
 
-// $nin , values & arrays
-// db.inventory.find({ qty: { $nin: [20, 25]} })
+// $nin , works for values & arrays
+//db.inventory.find({ qty: { $nin: [20, 25]} })
 // db.inventory.find({ tags: { $nin: ["book", "electronics"]} })
 
 // db.inventory.find({ tags: "book" })
-// db.inventory.find({ tags: ["school", "book"] })
-// db.inventory.find({ tags: ["book", "school"] })
+//db.inventory.find({ tags: ["school", "book"] })  //entrega solo los documentos que tengan exactamente esos elementos en ese orden
+//db.inventory.find({ tags: ["book", "school"] }) //importa el orden de los elementos
+
+
+
+
+// los de aca en adelante solo funcionan con arrays
 
 // arrays $all
-// db.inventory.find({ tags: {$all: ["book", "school"]} })
+//db.inventory.find({ tags: {$all: ["book", "school"]} }) //entrega los documentos que contengan todos los elementos del array
+//pueden estar en cualquier orden y no importa si hay mas elementos en el array
 
 // $size
-// db.inventory.find({ tags: {$size: 2} })
+//db.inventory.find({ tags: {$size: 2} }) //busca los arrays dentro del campo tags tq tengan 2 elementos
 
 // $elemMatch
-// db.survey.find({ results: { $elemMatch: { product: "xyz" }} })
-db.survey.find({
-  results:{
-    $elemMatch: {
-      product: "xyz",
-      score: { $gte: 7 }
-    }}
-  })
+db.survey.find({ results: { $elemMatch: { product: "xyz", score: { $gte: 7}   }} }) //se usa cuando un campo tiene un array con documentos dentro
+// y se quiere buscar un valor en uno de esos documentos. entrega todos los documentos tales que en el campo results tengan algun documento con product: "xyz"

@@ -1,0 +1,7 @@
+use("platzi_store")
+
+
+db.categories //similar a select * from categories
+  .find() //similar a where en SQL
+  .skip(9) //similar a offset en SQL
+  .limit(3) //similar a limit en SQL

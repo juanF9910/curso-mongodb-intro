@@ -6,7 +6,7 @@ use("sample_training")
 //   result: "Unable to Locate"
 // }).count() // 6
 
-// and explict
+// and explict, ponemos explicitamente el and
 // $and [{}, {}, {}]
 // db.inspections.find({
 //   $and: [
@@ -15,7 +15,7 @@ use("sample_training")
 //   ]
 // }).count() // 6
 
-// or
+// or, que tenga alguno de los dos
 // $or [{}, {}, {}]
 // db.inspections.find({
 //   $or: [
@@ -24,7 +24,7 @@ use("sample_training")
 //   ]
 // }).count()
 
-// nor
+// nor, que no tenga ninguno de los valores
 // $nor [{}, {}, {}]
 // db.inspections.find({
 //   $nor: [
@@ -32,12 +32,13 @@ use("sample_training")
 //     { result: "Unable to Locate" }
 //   ]
 // })
+
 // db.inspections.find({
 //   $nor: [
 //     { result: "No Violation Issued" },
 //     { result: "Unable to Locate" }
 //   ]
-// } , {
+// } , { // proyeccion de campos que queremos ver
 //   result: 1,
 //   _id: 0
 // })

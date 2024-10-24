@@ -11,3 +11,9 @@ db.inventory.insertMany([
 ])
 
 db.inventory.find()
+
+//los comparison query operators son $eq y $ne 
+// $eq: selecciona los documentos donde el valor del campo es igual al valor especificado
+// $ne: selecciona los documentos donde el valor del campo no es igual al valor especificado
+
+

@@ -1,0 +1,8 @@
+use("sample_weatherdata")
+
+db.data.insertOne({
+    "maxtemp": 34,
+    "mintemp": 23,
+    "date": "2015-01-01"
+})
+  

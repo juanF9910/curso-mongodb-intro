@@ -1,9 +1,16 @@
 use("platzi_store")
 
+//el comando $expr nos permite hacer operaciones de comparacion 
+//entre campos de un mismo documento
+
 // db.monthlyBudget.find({ spent: {$gte: 100} })
 
+
+//vamos a mostrar todos los documentos en los que el 
+//campo spent sea mayor o igual al campo budget
+
 db.monthlyBudget.find({
-  $expr: {
+  $expr: { //expresive operator, el $ se usa para referenciar campos del documento actual
     $gte: ["$spent", "$budget"]
   }
 })
